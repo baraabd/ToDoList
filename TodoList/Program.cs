@@ -183,8 +183,14 @@ namespace TodoList
         private static string Personal_data()
 
         {
-
-            Console.Write("\r\nPersonal_data: ");
+            Console.Clear();
+            Console.Write("\r\nAnge Förnamn: ");
+            string fisrtName = CaptureInput();
+            Console.Write("\r\nAnge Efternamn: ");
+            string lastname = CaptureInput();
+            Console.Write("\r\nAnge Ålder: ");
+            int age = Int16.Parse(CaptureInput());
+            Console.Write("\r\nPersonal data: \r\nFörnamn:" + fisrtName + "\r\nEfternamn: " + lastname + "\r\nÅlder: " + age + "\r\n");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
@@ -314,6 +320,11 @@ namespace TodoList
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
+        }
+
+        private static string CaptureInput()
+        {
+            return Console.ReadLine();
         }
 
     }
