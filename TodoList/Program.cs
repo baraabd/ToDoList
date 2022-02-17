@@ -275,6 +275,7 @@ namespace TodoList
         private static string Save_txtfile()
 
         {
+            Console.Clear();
             Console.Write("\r\nSkriv in texten du vill spara i filen! När du är klar trycker du på enter\r\n");
             string text = CaptureInput();
             using (StreamWriter sw = new StreamWriter("sample.txt", false, Encoding.UTF8, 65536))
@@ -288,6 +289,7 @@ namespace TodoList
         private static string Read_txtfile()
 
         {
+            Console.Clear();
             string text = System.IO.File.ReadAllText(@"sample.txt");
             System.Console.WriteLine("\r\nInnehåll av filen: \r\n{0}", text);
 
@@ -298,25 +300,34 @@ namespace TodoList
         private static string Get_root()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nGet_root: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
         }
+
+        
+
         private static string Multiplication_table()
-
         {
-
-            Console.Write("\r\nMultiplication_table: ");
+            Console.Clear();
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int j = 1; j <= 10; j++)
+                {
+                    Console.Write(j + " * " +  i + " = " + j*i + "\t");
+                }
+                Console.Write("\n");
+            }
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
-
         }
+
         private static string Sort_array()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nSort_array: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
@@ -325,7 +336,7 @@ namespace TodoList
         private static string Check_palindrome()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nCheck_palindrome: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
@@ -334,7 +345,7 @@ namespace TodoList
         private static string Print_all_numbers()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nPrint_all_numbers: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
@@ -343,7 +354,7 @@ namespace TodoList
         private static string Odd_even_values()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nOdd_even_values: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
@@ -352,7 +363,7 @@ namespace TodoList
         private static string Add_and_print()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nAdd_and_print: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
@@ -361,7 +372,7 @@ namespace TodoList
         private static string Add_random_values_health_strength_luck()
 
         {
-
+            Console.Clear();
             Console.Write("\r\nAdd_random_values_health_strength_luck: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
