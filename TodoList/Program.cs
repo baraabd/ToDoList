@@ -221,8 +221,18 @@ namespace TodoList
         private static string Which_is_largest()
 
         {
+            Console.Write("\r\nAnge första nummer: ");
+            int number1 = Int32.Parse(GetNumber());
+            Console.Write("\r\nAnge andra nummer: ");
+            int number2 = Int32.Parse(GetNumber());
 
-            Console.Write("\r\nWhich_is_largest: ");
+            if (number1 > number2)
+            {
+                Console.Write("\r\nStörst nummer är: " + number1);
+
+            }
+            else Console.Write("\r\nStörst nummer är: " + number2);
+
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
