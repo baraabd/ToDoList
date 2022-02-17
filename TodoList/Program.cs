@@ -288,8 +288,9 @@ namespace TodoList
         private static string Read_txtfile()
 
         {
+            string text = System.IO.File.ReadAllText(@"sample.txt");
+            System.Console.WriteLine("\r\nInnehåll av filen: \r\n{0}", text);
 
-            Console.Write("\r\nRead_txtfile: ");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
