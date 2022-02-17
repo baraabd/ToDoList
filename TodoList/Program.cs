@@ -230,8 +230,34 @@ namespace TodoList
         private static string Guess_number()
 
         {
+            Console.Clear();
+            int count = 1;
+            int randomNumber = RandomNumber();
+            Console.Write("\r\nGissa talet mellan 1 och 100:  ");
+            int number = Int16.Parse(GetNumber());
 
-            Console.Write("\r\nGuess_number: ");
+            while (randomNumber != number)
+            {
+                if (number > randomNumber)
+                {
+                    count++;
+                    Console.Write("\r\nTalet var för stort Gissa talet igen:  ");
+                    number = Int16.Parse(GetNumber());
+                    continue;
+
+                } else if (number < randomNumber)
+                {
+                    count++;
+                    Console.Write("\r\nTalet var för litet Gissa talet igen:  ");
+                    number = Int16.Parse(GetNumber());
+                    continue;
+                }
+
+                Console.Write("\r\ncount: " + count);
+            }
+
+            Console.Write("\r\nGrattis! Du har gissat talet");
+            Console.Write("\r\nDu hade " + count + " försök");
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
@@ -331,6 +357,20 @@ namespace TodoList
         {
             return Console.ReadLine();
         }
+
+        private static string GetNumber()
+        {
+            return Console.ReadLine();
+        }
+
+        private static int RandomNumber()
+        {
+            Random rnd = new Random();
+            int randomnumber = rnd.Next(1, 101);
+            return randomnumber;
+        }
+
+        
 
     }
 
