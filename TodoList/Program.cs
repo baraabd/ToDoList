@@ -1,6 +1,6 @@
 ﻿using System;
-
-
+using System.IO;
+using System.Text;
 
 namespace TodoList
 
@@ -275,8 +275,12 @@ namespace TodoList
         private static string Save_txtfile()
 
         {
-
-            Console.Write("\r\nSave_txtfile: ");
+            Console.Write("\r\nSkriv in texten du vill spara i filen! När du är klar trycker du på enter\r\n");
+            string text = CaptureInput();
+            using (StreamWriter sw = new StreamWriter("sample.txt", false, Encoding.UTF8, 65536))
+            {
+                sw.WriteLine(text);
+            }            
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
