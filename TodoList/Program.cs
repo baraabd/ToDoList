@@ -211,8 +211,9 @@ namespace TodoList
         private static string Todays_date()
 
         {
-
-            Console.Write("\r\nTodays_date: ");
+            Console.Clear();
+            var todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            Console.WriteLine("\r\nToday is: " + todayDate);
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
