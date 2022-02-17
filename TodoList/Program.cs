@@ -195,11 +195,15 @@ namespace TodoList
             return Console.ReadLine();
 
         }
+
         private static string Change_color()
 
         {
-
-            Console.Write("\r\nChange_color ");
+            Console.Clear();
+            Console.Write("\r\nAnge Text: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            string enterText = CaptureInput();
+            Console.ResetColor();
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
