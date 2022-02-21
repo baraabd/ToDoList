@@ -365,7 +365,21 @@ namespace TodoList
         private static string Check_palindrome()
         {
             Console.Clear();
-            Console.Write("\r\nCheck_palindrome: ");
+
+            string user, radar;
+
+            Console.Write("User:");
+            user = Console.ReadLine();
+
+            Console.Write("Radar:");
+            radar = Console.ReadLine();
+
+            if (user == radar)
+            {
+               Console.WriteLine("\r\n Palindrom:");
+            }
+            else Console.WriteLine("\r\n Inte palindrom:");
+
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
