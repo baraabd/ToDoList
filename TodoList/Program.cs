@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace TodoList
@@ -388,7 +390,20 @@ namespace TodoList
         private static string Print_all_numbers()
         {
             Console.Clear();
-            Console.Write("\r\nPrint_all_numbers: ");
+            string user1, user2;
+
+            Console.Write("User1:");
+            user1 = Console.ReadLine();
+
+            Console.Write("User2:");
+            user2 = Console.ReadLine();
+
+            foreach (int p in getNumberFromString(user1))
+                Console.Write(p + " ");
+
+            foreach (int p in getNumberFromString(user2))
+                Console.Write(p + " ");
+
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
 
@@ -437,8 +452,19 @@ namespace TodoList
             int randomnumber = rnd.Next(1, 101);
             return randomnumber;
         }
+        public static List<int> getNumberFromString(string user)
+        {
+            var listOfNumbers = new List<int>();
 
-        
+            for (int i = 0; i < user.Length; i++)
+            {
+                if (Char.IsNumber(user[i]))
+                {
+                    listOfNumbers.Add(int.Parse(user[i].ToString()));
+                }
+            }
+            return listOfNumbers;
+        }
 
     }
 
