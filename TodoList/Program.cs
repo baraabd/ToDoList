@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
+
 namespace TodoList
 
 {
@@ -398,10 +399,10 @@ namespace TodoList
             Console.Write("User2:");
             user2 = Console.ReadLine();
 
-            foreach (int p in getNumberFromString(user1))
+            foreach (int p in getNumbersFromString(user1))
                 Console.Write(p + " ");
 
-            foreach (int p in getNumberFromString(user2))
+            foreach (int p in getNumbersFromString(user2))
                 Console.Write(p + " ");
 
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
@@ -412,10 +413,49 @@ namespace TodoList
         private static string Odd_even_values()
         {
             Console.Clear();
-            Console.Write("\r\nOdd_even_values: ");
+            int listLength = 0;
+            Console.Write("\r\nAnge längden på nummer listan: ");
+            listLength = Int16.Parse(CaptureInput());
+            //StringBuilder nummerList = new StringBuilder("");
+
+            string numberList = "";
+            //Console.Write("\r\nSlumpmässiga array: ");
+
+            Console.Write("Ett list av nummer: ");
+            for (int i = 1; i <= listLength; i++)
+            {
+                if (i < listLength)
+                {
+                    numberList += RandomNumber() + ", ";
+                } else
+                {
+                    numberList += RandomNumber() + " ";
+                }
+            }
+
+            Console.Write(numberList + "\r\n");
+            Console.Write("Jämna Nummer är: ");
+            for (int i = 0; i < getNumbersFromList(numberList).Count; i++)
+            {
+                if (getNumbersFromList(numberList)[i] % 2 == 0 )
+                {
+                    Console.Write(getNumbersFromList(numberList)[i] + " ");
+                }
+                
+            }
+
+            Console.Write("\r\n" + "Udda Nummer är: ");
+
+            for (int i = 0; i < getNumbersFromList(numberList).Count; i++)
+            {
+                if (getNumbersFromList(numberList)[i] % 2 == 1)
+                {
+                    Console.Write(getNumbersFromList(numberList)[i] + " ");
+                }
+            }
+
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
-
         }
 
         private static string Add_and_print()
@@ -452,7 +492,8 @@ namespace TodoList
             int randomnumber = rnd.Next(1, 101);
             return randomnumber;
         }
-        public static List<int> getNumberFromString(string user)
+        
+        public static List<int> getNumbersFromString(string user)
         {
             var listOfNumbers = new List<int>();
 
@@ -466,6 +507,26 @@ namespace TodoList
             return listOfNumbers;
         }
 
+        public static List<int> getNumbersFromList(string user)
+        {
+            var listOfNumbers = new List<int>();
+            string value = "";
+            //Console.WriteLine(user.Length);
+            for (int i = 0; i < user.Length; i++)
+            {
+                if (Char.IsNumber(user[i]))
+                {
+                    value += user[i];
+                }
+                else if ((Char.IsWhiteSpace(user[i])) || (Char.IsSymbol(user[i])))
+                {
+                    listOfNumbers.Add(int.Parse(value.ToString()));
+                    value = "";
+                }
+            }
+
+            return listOfNumbers;
+        }
     }
 
 }
