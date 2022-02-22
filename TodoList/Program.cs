@@ -440,7 +440,15 @@ namespace TodoList
         private static string Add_and_print()
         {
             Console.Clear();
-            Console.Write("\r\nAdd_and_print: ");
+            List<int> numberList = new List<int>(getNumbersFromList(commaSeparatedDigits(listLength())));
+
+            int sum = 0;
+            for (int i = 0; i < numberList.Count; i++)
+            {
+                sum += numberList[i];
+            }
+
+            Console.Write("Adderas nummer: " + sum);
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
         }
