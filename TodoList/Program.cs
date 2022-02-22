@@ -303,10 +303,17 @@ namespace TodoList
         private static string Get_root()
         {
             Console.Clear();
-            Console.Write("\r\nGet_root: ");
+            Console.Write("Ange ett decimaltal: ");
+            double value = double.Parse(Console.ReadLine());
+            decimal root = (decimal)Math.Sqrt((double)value);
+            decimal raisedTo2 = (decimal)Math.Pow(value, 2);
+            decimal raisedTo10 = (decimal)Math.Pow(value, 10);
+
+            Console.WriteLine("Roten tal: " + root);
+            Console.WriteLine("Upphöjt till 2: " + raisedTo2);
+            Console.WriteLine("Upphöjt till 10: " + raisedTo10);
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
-
         }
 
         private static string Multiplication_table()
