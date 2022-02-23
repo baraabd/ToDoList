@@ -23,12 +23,12 @@ namespace TodoList
             Strength = strength;
             Health = health;
             Tur = tur;
-        }  
+        }
     }
 
     class Program
 
-    {   
+    {
 
         static void Main(string[] args)
 
@@ -46,7 +46,7 @@ namespace TodoList
 
         }
 
-        private static bool MainMenu()
+        public static bool MainMenu()
 
         {
             Console.Clear();
@@ -193,7 +193,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Personal_data()
+        public static string Personal_data()
         {
             Console.Clear();
             Console.Write("\r\nAnge Förnamn: ");
@@ -207,7 +207,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Change_color()
+        public static string Change_color()
         {
             Console.Clear();
             Console.Write("\r\nAnge Text: ");
@@ -218,7 +218,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Todays_date()
+        public static string Todays_date()
         {
             Console.Clear();
             var todayDate = DateTime.Now.ToString("yyyy-MM-dd");
@@ -227,8 +227,9 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Which_is_largest()
+        public static string Which_is_largest()
         {
+            Console.Clear();
             Console.Write("\r\nAnge första nummer: ");
 
             int number1 = Int32.Parse(GetNumber());
@@ -245,7 +246,7 @@ namespace TodoList
 
         }
 
-        private static string Guess_number()
+        public static string Guess_number()
         {
             Console.Clear();
             int count = 1;
@@ -280,7 +281,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Save_txtfile()
+        public static string Save_txtfile()
         {
             Console.Clear();
             Console.Write("\r\nSkriv in texten du vill spara i filen! När du är klar trycker du på enter\r\n");
@@ -294,7 +295,7 @@ namespace TodoList
 
         }
 
-        private static string Read_txtfile()
+        public static string Read_txtfile()
         {
             Console.Clear();
             string text = System.IO.File.ReadAllText(@"sample.txt");
@@ -303,7 +304,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Get_root()
+        public static string Get_root()
         {
             Console.Clear();
             Console.Write("Ange ett decimaltal: ");
@@ -319,7 +320,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Multiplication_table()
+        public static string Multiplication_table()
         {
             Console.Clear();
             for (int i = 1; i <= 10; i++)
@@ -334,7 +335,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Sort_array()
+        public static string Sort_array()
         {
             Console.Clear();
             int listLength = 0;
@@ -367,13 +368,13 @@ namespace TodoList
                 }
             }
             foreach (int p in sortList)
-            Console.Write(p + " ");
+                Console.Write(p + " ");
             Console.Read();
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
             return Console.ReadLine();
         }
 
-        private static string Check_palindrome()
+        public static string Check_palindrome()
         {
             Console.Clear();
             string user, radar;
@@ -390,7 +391,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Print_all_numbers()
+        public static string Print_all_numbers()
         {
             Console.Clear();
             string user1, user2;
@@ -411,7 +412,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Odd_even_values()
+        public static string Odd_even_values()
         {
             Console.Clear();
 
@@ -436,7 +437,7 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Add_and_print()
+        public static string Add_and_print()
         {
             Console.Clear();
             List<int> numberList = new List<int>(GetNumbersFromList(CommaSeparatedDigits(ListLength())));
@@ -452,21 +453,15 @@ namespace TodoList
             return Console.ReadLine();
         }
 
-        private static string Add_random_values_health_strength_luck()
+        public static string Add_random_values_health_strength_luck()
         {
             Console.Clear();
-            //Console.Write("Ange första karktär:");
-            //string karktar1 = CaptureInput();
-
-            //Console.Write("Ange Andra karktär:");
-            //string karktar2 = CaptureInput();
             Console.Write("Ange första karaktär: ");
-
             Character Charchter1 = new Character(GetCharchterName(), GetStrength(), GetHealth(), GetTur());
             Console.Write("Ange Andra karaktär: ");
 
             Character Charchter2 = new Character(GetCharchterName(), GetStrength(), GetHealth(), GetTur());
-            Console.WriteLine(Charchter1.Name + ", Styrka:" +  Charchter1.Strength + ", Hälsa:" + Charchter1.Health + ", Tur:" + Charchter1.Tur);
+            Console.WriteLine(Charchter1.Name + ", Styrka:" + Charchter1.Strength + ", Hälsa:" + Charchter1.Health + ", Tur:" + Charchter1.Tur);
             Console.WriteLine(Charchter2.Name + ", Styrka:" + Charchter2.Strength + ", Hälsa:" + Charchter2.Health + ", Tur:" + Charchter2.Tur);
 
             Console.Write("\r\nTryck på Enter för att återgå till huvudmenyn");
@@ -476,12 +471,12 @@ namespace TodoList
         }
 
 
-        private static string GetCharchterName()
+        public static string GetCharchterName()
         {
             return Console.ReadLine();
         }
 
-        private static string RandomChar()
+        public static string RandomChar()
         {
             Random rnd = new Random();
             string randomChar = "";
@@ -492,43 +487,43 @@ namespace TodoList
             return randomChar;
         }
 
-        private static string GetStrength()
+        public static string GetStrength()
         {
 
             return RandomChar();
         }
 
-        private static string GetHealth()
+        public static string GetHealth()
         {
 
             return RandomChar();
         }
 
-        private static string GetTur()
+        public static string GetTur()
         {
 
             return RandomChar();
         }
 
 
-        private static string CaptureInput()
+        public static string CaptureInput()
         {
             return Console.ReadLine();
         }
 
-        private static string GetNumber()
+        public static string GetNumber()
         {
             return Console.ReadLine();
         }
 
-        private static int RandomNumber()
+        public static int RandomNumber()
         {
             Random rnd = new Random();
             int randomnumber = rnd.Next(1, 101);
             return randomnumber;
         }
 
-        
+
 
         public static List<int> GetNumbersFromString(string user)
         {
@@ -544,7 +539,7 @@ namespace TodoList
             return listOfNumbers;
         }
 
-        private static int ListLength()
+        public static int ListLength()
         {
             int listLength = 0;
             Console.Write("\r\nAnge längden på nummer listan: ");
@@ -552,22 +547,23 @@ namespace TodoList
             return listLength;
         }
 
-        private static string CommaSeparatedDigits(int listLength)
+        public static string CommaSeparatedDigits(int listLength)
         {
             string numberList = "";
-            Console.Write("Ett list av nummer: ");
+            Console.WriteLine("Ange numbers:");
+
             for (int i = 1; i <= listLength; i++)
             {
                 if (i < listLength)
                 {
-                    numberList += RandomNumber() + ", ";
+                    numberList += Console.ReadLine() + ", ";
                 }
                 else
                 {
-                    numberList += RandomNumber() + " ";
+                    numberList += Console.ReadLine() + " ";
                 }
             }
-            Console.WriteLine(numberList);
+            Console.WriteLine("Siffrorna du angav:" + numberList);
             return numberList;
         }
 
@@ -591,5 +587,5 @@ namespace TodoList
         }
     }
 
-    
+
 }
